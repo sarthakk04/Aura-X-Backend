@@ -4,8 +4,7 @@
 // Get a free hosted Postgres database in seconds: `npx create-db`
 
 generator client {
-  provider = "prisma-client"
-  output   = "../generated/prisma"
+  provider = "prisma-client-js"
 }
 
 datasource db {
@@ -18,7 +17,7 @@ model User {
   email     String   @unique
   password  String
   role      String
-  quizzes   Quiz[]
+  quizzes   Quiz[]  
   attempts  Attempt[]
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -45,6 +44,7 @@ model Question {
   quiz      Quiz     @relation(fields: [quizId], references: [id])
   text      String
   points    Int
+  answers Answer[]
   options   Option[]
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -55,6 +55,7 @@ model Option {
   questionId Int
   question   Question @relation(fields: [questionId], references: [id])
   text       String
+  answers Answer[]
   isCorrect  Boolean
 }
 
