@@ -34,6 +34,6 @@ export const getUserByIdController = async (req, res) => {
     if (!id) {
         throw new ApiError(400, "Id is Required")
     }
-    const userDataById = await getUserById(Number(id));
+    const userDataById = await getUserById(id);
     return res.status(201).json(new ApiResponse(201, userDataById, `User with Id : ${id} fetched successfully`))
 }

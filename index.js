@@ -4,6 +4,7 @@ import errorHandler from './middleware/error.middleware.js';
 import { router } from './routes/health.routes.js';
 import userRoute from './routes/users.routes.js';
 import { authRoute } from './routes/auth.routes.js';
+import { quizRoute } from './routes/quizes.routes.js';
 
 
 dotenv.config();
@@ -12,7 +13,8 @@ app.use(express.json());
 
 
 app.use('/', router);
-app.use('/auth' ,authRoute)
+app.use('/auth', authRoute)
+app.use('/quiz', quizRoute)
 app.use('/users', userRoute);
 
 
