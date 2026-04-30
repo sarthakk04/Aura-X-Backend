@@ -5,6 +5,7 @@ import { router } from './routes/health.routes.js';
 import userRoute from './routes/users.routes.js';
 import { authRoute } from './routes/auth.routes.js';
 import { quizRoute } from './routes/quizes.routes.js';
+import { attemptRoute } from './routes/attempt.route.js';
 
 
 dotenv.config();
@@ -16,6 +17,7 @@ app.use('/', router);
 app.use('/auth', authRoute)
 app.use('/quiz', quizRoute)
 app.use('/users', userRoute);
+app.use('/attempt', attemptRoute);
 
 
 app.use(errorHandler);
