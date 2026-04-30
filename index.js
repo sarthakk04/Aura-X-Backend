@@ -6,6 +6,7 @@ import userRoute from './routes/users.routes.js';
 import { authRoute } from './routes/auth.routes.js';
 import { quizRoute } from './routes/quizes.routes.js';
 import { attemptRoute } from './routes/attempt.route.js';
+import { leaderBoardRouter } from './routes/leaderBoard.routes.js';
 
 
 dotenv.config();
@@ -18,6 +19,7 @@ app.use('/auth', authRoute)
 app.use('/quiz', quizRoute)
 app.use('/users', userRoute);
 app.use('/attempt', attemptRoute);
+app.use('/leaderboard', leaderBoardRouter);
 
 
 app.use(errorHandler);
